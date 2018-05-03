@@ -13,10 +13,22 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top:100px;
+    margin-top:50px;
     
 }
 
 .jumbo{
     color:black;
+}
+
+.navBtn{
+    width:40%;
+}
+
+footer{
+    margin-top: 200px;
+}
+
+.pushNav{
+    margin-top:100px;
 }
