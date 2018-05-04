@@ -1,5 +1,5 @@
  <!-- navigation bar code-->
-                     <nav class="navbar navbar-inverse navbar-fixed-top navbar-collapse" role="navigation">
+                     <nav class="navbar navbar-inverse navbar-fixed-top navbar-collapse" role="navigation" data-ng-init="login=false">
                         
                         <!-- for title-->
                         <div class="navbar-header col-md-1" >
@@ -22,7 +22,7 @@
                                         <li><a href="#">Sell Product</a></li>
                                         <li><a href="#">About Us</a></li>
                                         <li><a href="#">Give Feedback</a></li>
-                                        <li><a href="SignUpPage.php">Register</a></li>                            
+                                        <li data-ng-show="login == false"><a href="SignUpPage.php">Register</a></li>
                                     </ul>
                                 </div>
                                 
@@ -44,8 +44,11 @@
                                 <button type="submit" class="btn btn-success">
                                     <span class="glyphicon glyphicon-shopping-cart "></span> Cart Items
                                 </button>
-                                <button class="btn btn-primary navBtn" data-toggle="modal" data-target="#loginModal">
+                                <button class="btn btn-primary navBtn" data-toggle="modal" data-target="#loginModal" data-ng-show="login == false">
                                     Login
+                                </button>
+                                <button class="btn btn-primary navBtn" data-toggle="modal" data-target="#loginModal" data-ng-hide="login == false">
+                                    User
                                 </button>
                             </div>
                          </div>

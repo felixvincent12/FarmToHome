@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' data-ng-app="">
     <!-- header of the page-->
      <head> 
         <title>Home Page</title> 
