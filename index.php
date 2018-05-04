@@ -72,7 +72,7 @@
             <div class="jumbotron col-md-12">
                 <div class="container">
                     <h1 class="jumbo"><br/>
-                        Welcome to Farm2House!<br/>
+                        Welcome to Farm2Home!<br/>
                         <small class="jumbo">come here and find what you want!</small>
                     </h1>
                 </div>
