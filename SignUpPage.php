@@ -171,5 +171,3 @@
         <script src="js/bootstrap.min.js"></script>
         <!-- Basic AngularJS -->
         <script src="js/angular.min.js"></script>
-    </body>
-</html>
