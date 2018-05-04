@@ -15,7 +15,7 @@
         <form name="sigUpForm" style="margin: 10px 80px 40px 80px;  border:1px solid grey; padding: inherit; border-radius: 10px; padding-bottom: 10px;">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <img src="image/logo.png"/ class="text-center">
+                    <img src="image/log.png"/ class="text-center">
                 </div>
             </div>
             
