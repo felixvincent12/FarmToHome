@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' data-ng-app="">
     <!-- header of the page-->
      <head> 
         <title>Home Page</title> 
@@ -20,7 +20,7 @@
     
     <body>
         <!--modal for login -->
-        <div class="modal fade" id="loginModal" role="dialog" tabindex="-1" aria-labelledby="loginModal1" aria-hidden="true">
+        <div class="modal fade" id="loginModal" role="dialog" aria-labelledby="loginModal1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <!--modal header-->
@@ -107,10 +107,10 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#homePage"><img src="image/logo.png"/></a>
+                            <a class="navbar-brand" href="#homePage"><img src="image/logo.png" width="40"/></a>
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
-                            <div class="col-md-9">
+                            <div class="col-md-8">
                             
                                 
 
@@ -134,12 +134,13 @@
                                         <span class="glyphicon glyphicon-search"></span> Search
                                     </button>
                                 </form>
-
+                                
+                                
                             </div>
                         
                             <!-- for login button and shopping cart-->
-                            <div class="col-md-2">
-                                <button type="submit" class="btn btn-success navBtn">
+                            <div class="col-md-3 pull-right text-right navBtnBar">
+                                <button type="submit" class="btn btn-success">
                                     <span class="glyphicon glyphicon-shopping-cart "></span> Cart Items
                                 </button>
                                 <button class="btn btn-primary navBtn" data-toggle="modal" data-target="#loginModal">
@@ -157,7 +158,6 @@
             <div class="col-md-12">
             </div>
         </div>
-        
         
         
         <!--footer-->
@@ -184,5 +184,7 @@
         <script src="js/jquery.min.js"></script> 
         <!-- All Bootstrap  plug-ins  file --> 
         <script src="js/bootstrap.min.js"></script> 
+        <!-- Basic AngularJS -->
+        <script src="js/angular.min.js"></script>
     </body>
 </html>

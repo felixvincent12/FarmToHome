@@ -22,7 +22,11 @@ body{
 }
 
 .navBtn{
-    width:40%;
+    min-width: 109px;
+}
+.navBtnBar {
+    min-height: 50px;
+    line-height: 50px;
 }
 
 footer{
@@ -31,4 +35,8 @@ footer{
 
 .pushNav{
     margin-top:100px;
+}
+.navbar-brand > img{
+    position:absolute; 
+    top:5px;
 }
