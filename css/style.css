@@ -40,3 +40,28 @@ footer{
     position:absolute; 
     top:5px;
 }
+
+.editProductBtn{
+    min-width: 80px;
+}
+
+.editProductBtnGroup{
+    margin-top:65px;
+}
+
+.productManagementRow{
+    margin-top:5px;
+    border: 2px solid #D6D1CD;
+}
+
+.loginSubmitBtn{
+    margin-left:490px;
+}
+
+.editProductBtnGrp{
+    margin-left:380px;
+}
+
+.uploadProductBtnGrp{
+    margin-left:980px;
+}
