@@ -47,9 +47,9 @@
                                 <button class="btn btn-primary navBtn" data-toggle="modal" data-target="#loginModal" data-ng-show="login == false">
                                     Login
                                 </button>
-                                <button class="btn btn-primary navBtn" data-toggle="modal" data-target="#loginModal" data-ng-hide="login == false">
+                                <a class="btn btn-primary navBtn" href="UserProfilePage.php" data-ng-show="login == false">
                                     User
-                                </button>
+                                </a>
                             </div>
                          </div>
                     </nav>
