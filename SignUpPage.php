@@ -10,8 +10,8 @@
         
     </head> 
     <body >
-        <div class="container">
-        <form name="signUpForm" method="post" style="margin: 10px 80px 40px 80px;  border:1px solid grey; padding: inherit; border-radius: 10px; padding-bottom: 10px;" action="" novalidate>
+        <div class="container" data-ng-controller="myCtrl">
+        <form name="signUpForm" style="margin: 10px 80px 40px 80px;  border:1px solid grey; padding: inherit; border-radius: 10px; padding-bottom: 10px;" novalidate>
             <div class="row">
                 <div class="col-md-12 text-center">
                     <img src="image/logo.png"/ class="text-center">
@@ -44,7 +44,7 @@
                 </div>
                 
                 <div class="col-md-9">
-                    <input type="text" class="form-control" id="ulName" name="ulName" data-ng-model="ulName" placeholder="First" pattern="[a-zA-Z]{1,}" required/>
+                    <input type="text" class="form-control" id="ulName" name="ulName" data-ng-model="ulName" placeholder="Last" pattern="[a-zA-Z]{1,}" required/>
                     <span data-ng-show="signUpForm.ulName.$invalid && signUpForm.ulName.$dirty" class="glyphicon glyphicon-remove form-control-feedback"></span>
                     <span data-ng-show="signUpForm.ulName.$valid" class="glyphicon glyphicon-ok form-control-feedback"></span>
                     <div class="text-danger" data-ng-show="signUpForm.ulName.$error.required && signUpForm.ulName.$dirty">*Please Fill In</div>
@@ -192,15 +192,15 @@
                     <label>User Types:</label><br/>
                 </div>
                 <div class="col-md-9">
-                    <input type="radio" name="uType" value="consumer" class="radio-inline" checked >Consumer<br/>
-                    <input type="radio" name="uType" value="farmer" class="radio-inline">Farmer
+                    <input type="radio" name="uType" value="consumer" class="radio-inline" data-ng-model="uRole" checked >Consumer<br/>
+                    <input type="radio" name="uType" value="farmer" class="radio-inline" data-ng-model="uRole">Farmer
                 </div>
             </div>
 
             
             <div class="row">
                 <div class="col-md-12 text-right">
-                    <button type="submit" data-ng-model="btnSubmit" data-ng-disabled="signUpForm.$invalid" class="signupbtn btn btn-success">Sign Up</button>
+                    <button type="submit" data-ng-model="btnSubmit" data-ng-disabled="signUpForm.$invalid" class="signupbtn btn btn-success" data-ng-click="register()">Sign Up</button>
                     <button type="button" class="cancelbtn btn btn-default" onclick="window.location.href='index.php'">Cancel</button>
                 </div>
             </div>
@@ -215,7 +215,7 @@
         <script src="js/bootstrap.min.js"></script>
         <!-- Basic AngularJS -->
         <script src="js/angular.min.js"></script>
-        
         <script src="js/validation.js"></script>
+		<script src="js/signUp.js"></script>
     </body>
 </html>
