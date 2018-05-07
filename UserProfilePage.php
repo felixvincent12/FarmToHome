@@ -20,9 +20,6 @@
     </head> 
     
     <body>
-        <!--modal for login -->
-        <?php require_once "loginModal.php" ?>
-        
         
         <!-- row 1: for navigation bar-->
         <div class="row">

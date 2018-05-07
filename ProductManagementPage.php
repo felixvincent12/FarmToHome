@@ -19,8 +19,6 @@
     </head> 
     
     <body>
-        <!--modal for login -->
-        <?php require_once "loginModal.php" ?>
         
          <!--modal for edit product -->
         <div class="modal fade" id="editProduct" role="dialog" aria-labelledby="loginModal1" aria-hidden="true">

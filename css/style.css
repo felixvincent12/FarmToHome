@@ -65,3 +65,12 @@ footer{
 .uploadProductBtnGrp{
     margin-left:980px;
 }
+
+.cart-border{
+    border:2px solid black;
+}
+
+.cartItemBorder{
+    border:2px solid grey;
+    margin:5px;
+}

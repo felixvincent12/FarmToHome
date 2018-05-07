@@ -19,8 +19,6 @@
     </head> 
     
     <body>
-        <!--modal for login -->
-        <?php require_once "loginModal.php" ?>
         
         
         <!-- row 1: for navigation bar-->
@@ -65,7 +63,7 @@
                     </div>
                           
                      <div class="row uploadProductBtnGrp">
-                        <button type="button" class="btn btn-success">Upload</button>
+                        <button class="btn btn-success">Upload</button>
                          <a type="submit" class="btn btn-danger" href="ProductManagementPage.php">Cancel</a>
                     </div>
                 </form>
