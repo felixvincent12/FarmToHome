@@ -26,7 +26,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="ProductPage.php">Product</a></li>
                         <li><a href="ProductManagementPage.php">Sell Product</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="aboutUs.php">About Us</a></li>
                         <li><a href="FeedbackPage.php">Give Feedback</a></li>
                         <li data-ng-show="login == false"><a href="SignUpPage.php">Register</a></li>
                     </ul>
