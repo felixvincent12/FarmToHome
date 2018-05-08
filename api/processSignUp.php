@@ -3,56 +3,49 @@
 session_start();
 include('database.php');
 
-if(isset($_POST['data'])){
-	$data = $_POST['data'];
-	$name = $data->name;
-	$email = $data->email;
-	$password = $data->password;
-	$dob = $data->dob;
-	$address = $data->address;
-	$city = $data->city;
-	$postcode = $data->postcode;
-	$phone = $data->phone;
-	$role = $data->role;
-	
-	
-//	$data = json_decode(file_get_contents("php://input"));
-//	
-//	//get the data from form
-//	$name = $data->name;
-	
-
+if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['dob']) && isset($_POST['address']) && isset($_POST['city']) && isset($_POST['postcode']) && isset($_POST['phone']) && isset($_POST['role']) ){
+	//get the data to insert to table	
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+	$dob = $_POST['dob'];
+	$address = $_POST['address'];
+	$city = $_POST['city'];
+	$postcode = $_POST['postcode'];
+	$phone = $_POST['phone'];
+	$role = $_POST['role'];
+	//convert date
+	$splitDate = explode(" ", $dob);
+	$day = $splitDate[1];
+	$month = $splitDate[2];
+	$year = $splitDate[3];
+	$fullDate = $month." ".$day." ".$year;
+	//full address
+	$address1 = $address . " " . ", " . $postcode . ", " . $city;
+	//start session
 	$_SESSION['login_user'] = $email;
-	$address1 = $address . " " . ", " . $postcode . ", " . $city;	
-	$msg = "";
 	
-	if ($role == 'Farmer'){
-		
-		$sql = "INSERT INTO SELLER (SELLERID, SELLEREMAIL, SELLERNAME, SELLERPASS, SELLERPHONE, SADDRESS, SDOB) VALUES ('$email', '$name', '".md5($password)."', '$phone', '$address1', '$dob')";
+	//insert the farmer data
+	if ($role == 'farmer'){
+		$sql = 'INSERT INTO SELLER (SELLEREMAIL, SELLERNAME, SELLERPASS, SELLERPHONE, SADDRESS, SDOB) VALUES ("' . $email . '", "' . $name . '", "'.md5($password).'", ' . $phone . ', "' . $address1 . '", "' . date('Y-m-d', strtotime($fullDate)) . '")';
 		if(mysqli_query($conn, $sql))
 		{
-			$msg = "success";
-			return json_encode($msg);
+			echo "success";
 		}
 		else 
 		{
-			$msg = "unsuccessful";
-			return json_encode($msg);
-//				"error inserting data:" .mysqli_error($conn)."<br/>";
+			echo "error inserting data:" . mysqli_error($conn) . "<br/>";
 		}
 	}
-	else if ($role == 'Customer'){
-		$sql = "INSERT INTO CUSTOMER (CUSTID, CUSTEMAIL, CUSTNAME, CUSTPASS, CUSTPHONE, CADDRESS, CDOB) VALUES ('$email', '$name', '".md5($password)."', '$phone', '$address1', '$dob')";
+	else if ($role == 'customer'){ //insert customer data
+		$sql = 'INSERT INTO CUSTOMER (CUSTEMAIL, CUSTNAME, CUSTPASS, CUSTPHONE, CADDRESS, CDOB) VALUES ("' . $email . '", "' . $name . '", "'.md5($password).'", ' . $phone . ', "' . $address1 . '", "' . date('Y-m-d', strtotime($fullDate)) . '")';
 		if(mysqli_query($conn, $sql))
 		{
-			$msg = "success";
-			return json_encode($msg);
+			echo "success";
 		}
 		else 
 		{
-			$msg = "unsuccessful";
-			return json_encode($msg);
-//				"error inserting data:" .mysqli_error($conn)."<br/>";
+			echo "error inserting data:" .mysqli_error($conn) . "<br/>";
 		}	
 	}
 }

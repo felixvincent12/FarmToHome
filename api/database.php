@@ -1,9 +1,8 @@
-<!--
-    Main function: to connect to database, create and select database and tables
--->
 <?php
+//Main function: to connect to database, create and select database and tables
 //	header("Access-Control-Allow-Origin: *");
 //	header("Content-Type: application/json; charset=UTF-8");
+
 	//connect to database
 	$conn = mysqli_connect("localhost", "root", "");
 	
@@ -50,7 +49,7 @@
 //					echo "can't use database selected:<br/>". mysqli_error($conn);
 				}
 				else {
-					echo "database selected<br/>";
+//					echo "database selected<br/>";
 					//check if table exist
 				    $sql4 = "SELECT * FROM CUSTOMER";
                     $sql5 = "SELECT * FROM SELLER";
@@ -61,9 +60,9 @@
                     {
 //                        echo "tables don't exist<br/>";
 						//create table if not exists
-						$sql3 = 'CREATE TABLE CUSTOMER(CUSTID INT(4) UNSIGNED ZEROFILL AUTO_INCREMENT NOT NULL, CUSTEMAIL VARCHAR(100) NOT NULL, CUSTNAME VARCHAR(100) NOT NULL, CUSTPASS VARCHAR(100) NOT NULL, CUSTPHONE VARCHAR(10) NOT NULL, CADDRESS VARCHAR(200) NOT NULL, CDOB VARCHAR(10) NOT NULL, PRIMARY KEY(CUSTID))';
+						$sql3 = 'CREATE TABLE CUSTOMER(CUSTID INT(4) UNSIGNED ZEROFILL AUTO_INCREMENT NOT NULL, CUSTEMAIL VARCHAR(100) NOT NULL, CUSTNAME VARCHAR(100) NOT NULL, CUSTPASS VARCHAR(100) NOT NULL, CUSTPHONE VARCHAR(10) NOT NULL, CADDRESS VARCHAR(200) NOT NULL, CDOB DATE NOT NULL, PRIMARY KEY(CUSTID))';
 				
-						$sql4 = 'CREATE TABLE SELLER(SELLERID INT(4) UNSIGNED ZEROFILL AUTO_INCREMENT NOT NULL, SELLEREMAIL VARCHAR(100) NOT NULL, SELLERNAME VARCHAR(100) NOT NULL, SELLERPASS VARCHAR(100) NOT NULL, SELLERPHONE VARCHAR(10) NOT NULL, SADDRESS VARCHAR(200) NOT NULL, SDOB VARCHAR(10) NOT NULL, PRIMARY KEY(SELLERID))';
+						$sql4 = 'CREATE TABLE SELLER(SELLERID INT(4) UNSIGNED ZEROFILL AUTO_INCREMENT NOT NULL, SELLEREMAIL VARCHAR(100) NOT NULL, SELLERNAME VARCHAR(100) NOT NULL, SELLERPASS VARCHAR(100) NOT NULL, SELLERPHONE VARCHAR(10) NOT NULL, SADDRESS VARCHAR(200) NOT NULL, SDOB DATE NOT NULL, PRIMARY KEY(SELLERID))';
                         //check if tables created
                         if(mysqli_query($conn, $sql3) && mysqli_query($conn, $sql4)){
 //                            echo "table created<br/>";

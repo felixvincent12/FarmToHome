@@ -14,31 +14,28 @@ app.controller ("myCtrl", function($scope, $http, $log){
 			'role': $scope.uRole
 		};
 		
-		$log.log(FormData);
-		$log.log("hello");
-		
-		
 		var url = "api/processSignUp.php";
-		var data = $.param({data: FormData});
-		var config = {
-			headers: {
-				'Content-Type':'application/x-www-form-urlencoded;charset=utf-8;'
-			}
-		}
+		var data = FormData;
+		var header = {'Content-Type':'application/x-www-form-urlencoded;'};
+	
 		//call the services
-		$http.post(url, data, config)
+		$http({
+			method: 'POST',
+			url: url,
+			data: $.param(data),
+			headers: header
+		})
 		.then (
 			function(response){
 				if(response.data == "success"){
 					alert("You have successfully registered");
 					window.location.href = "index.php";
-					s.islogin = true;
+//					$scope.islogin = true;
 				}
 				else {
-					alert ("unseccessful register, please try again");
+					$scope.errMsg = response.data;
+					alert($scope.errMsg);
 				}
-//				$scope.responseMsg = response.data;
-//				$log.log($scope.responseMsg);
 			},
 			function(response){
 				$scope.msg = "service does not exist";

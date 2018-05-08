@@ -1,3 +1,7 @@
+<?php
+date_default_timezone_set('Asia/Kuala_Lumpur');
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-ng-app="farmApp">
     <!-- header of the page-->
@@ -192,7 +196,7 @@
                     <label>User Types:</label><br/>
                 </div>
                 <div class="col-md-9">
-                    <input type="radio" name="uType" value="consumer" class="radio-inline" data-ng-model="uRole" checked >Consumer<br/>
+                    <input type="radio" name="uType" value="customer" class="radio-inline" data-ng-model="uRole" checked >Customer<br/>
                     <input type="radio" name="uType" value="farmer" class="radio-inline" data-ng-model="uRole">Farmer
                 </div>
             </div>
