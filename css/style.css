@@ -113,3 +113,17 @@ footer{
 .strRate:not(:hover) > :checked ~ label:before{
   opacity : 1;
 }
+
+#aboutus, #mission {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    border: 5px dashed green;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.team {
+    padding-top: 20px;
+}

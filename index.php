@@ -55,7 +55,7 @@
                 <div class="row">
                     <div class="col-md-4 col-xs-12">
                         <h1>About us</h1>
-                        <a href="#">Click here to know more about our company</a>
+                        <a href="aboutUs.php">Click here to know more about our company</a>
                     </div>
                     <div class="col-md-4 col-xs-12">
                         <h1>Company contact number</h1>
