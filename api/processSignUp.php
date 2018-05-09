@@ -24,6 +24,7 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) 
 	$address1 = $address . " " . ", " . $postcode . ", " . $city;
 	//start session
 	$_SESSION['login_user'] = $email;
+    $_SESSION['role'] = $role;
 	
 	//insert the farmer data
 	if ($role == 'farmer'){

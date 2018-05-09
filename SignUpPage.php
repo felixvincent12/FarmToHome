@@ -14,7 +14,7 @@ date_default_timezone_set('Asia/Kuala_Lumpur');
         
     </head> 
     <body >
-        <div class="container" data-ng-controller="myCtrl">
+        <div class="container" data-ng-controller="signUpCtrl">
         <form name="signUpForm" style="margin: 10px 80px 40px 80px;  border:1px solid grey; padding: inherit; border-radius: 10px; padding-bottom: 10px;" novalidate>
             <div class="row">
                 <div class="col-md-12 text-center">

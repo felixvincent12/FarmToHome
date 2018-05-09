@@ -1,21 +1,14 @@
-var app = angular.module ("farmApp", []);
+var app = angular.module("farmApp", []);
 
-app.controller ("signUpCtrl", function($scope, $http, $window){
-	$scope.register = function (){
-		var FormData = {
-			'name': $scope.ufName + " " + $scope.ulName,
-			'email': $scope.uEmail,
-			'password': $scope.uPassword,
-			'dob': $scope.uDob,
-			'address': $scope.uAddress,
-			'city': $scope.uCity,
-			'postcode': $scope.uPostCode,
-			'phone': $scope.uPhone,
-			'role': $scope.uRole
-		};
-		
-		var url = "api/processSignUp.php";
-		var data = FormData;
+app.controller ("loginCtrl", function($scope, $http, $window){
+    $scope.login = function (){
+        var loginData = {
+            email: $scope.loginEmail,
+            password: $scope.loginPassword
+        };
+        
+        var url = "api/processLogin.php";
+		var data = loginData;
 		var header = {'Content-Type':'application/x-www-form-urlencoded;'};
 	
 		//call the services
@@ -25,17 +18,17 @@ app.controller ("signUpCtrl", function($scope, $http, $window){
 			data: $.param(data),
 			headers: header
 		})
-		.then (
+        .then (
 			function(response){
 				if(response.data == "success"){
-					$window.alert("You have successfully registered");
+					$window.alert("You have successfully login");
 					$window.location.href = "index.php";
 //					$scope.islogin = true;
 				}
 				else {
 					$scope.errMsg = response.data;
 					$window.alert($scope.errMsg);
-				}
+				}                
 			},
 			function(response){
 				$scope.msg = "service does not exist";
@@ -45,6 +38,5 @@ app.controller ("signUpCtrl", function($scope, $http, $window){
 			}
 		);	
 	};
-	
-});
-
+          
+}); 
