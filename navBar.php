@@ -1,3 +1,16 @@
+<?php
+        echo '<div data-ng-init="login=false"></div>';
+
+        session_start();
+        if ($_SESSION['login_user'] != "" && $_SESSION['role'] != ""){
+            echo '<div data-ng-model="login = true"></div>';
+        }
+    
+        else{
+            echo'<div data-ng-model = "login = false"></div>';
+        }
+    ?>
+
 <!--modal for login -->
     <?php require_once "loginModal.php" ?>
 
@@ -5,7 +18,7 @@
 
 
 <!-- navigation bar code-->
-    <nav class="navbar navbar-inverse navbar-fixed-top navbar-collapse" role="navigation" data-ng-init="login=false">
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-collapse" role="navigation">
                         
             <!-- for title-->
         <div class="navbar-header col-md-1" >
@@ -53,9 +66,24 @@
                   <button class="btn btn-primary navBtn" data-toggle="modal" data-target="#loginModal" data-ng-show="login == false">
                     Login
                   </button>
-                  <a class="btn btn-primary navBtn" href="UserProfilePage.php" data-ng-show="login == false">
+<!--
+                  <a class="btn btn-primary navBtn" href="UserProfilePage.php" data-ng-show="login == true">
                     User
                 </a>
+-->
+                   <a class="btn btn-primary navBtn dropdown-toggle" data-toggle="dropdown" data-ng-show="login == true">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span class="caret"></span>
+                   </a>
+                
+                   <ul class="dropdown-menu">
+                        <li><a href="#">User Profile</a></li>
+                        <li><a href="#">Purchase History</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                       
+                    
              </div>
            </div>
      </nav>
