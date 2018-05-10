@@ -16,6 +16,15 @@
             <script src="js/respond.min.js"></script> 
         <![endif]--> 
         <link type="text/css" href="css/style.css" rel="stylesheet"/>
+        <!-- jQuery – required for Bootstrap's JavaScript plugins) -->  
+        <script src="js/jquery.min.js"></script> 
+        <!-- All Bootstrap  plug-ins  file --> 
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Basic AngularJS -->
+        <script src="js/angular.min.js"></script>
+        <script src="js/farmApp.js"></script>
+         <script src="js/angular-route.min.js"></script>
+         
     </head> 
     
     
@@ -33,19 +42,7 @@
             </div>
         </div>
         
-        <!-- row 2: for jumbotron -->
-        <div class="row">
-            <div class="jumbotron col-md-12">
-                <div class="container">
-                    <h1 class="jumbo"><br/>
-                        Welcome to Farm2Home!<br/>
-                        <small class="jumbo">come here and find what you want!</small>
-                    </h1>
-                </div>
-            </div>              
-        </div>
-        
-        <!--row 3: showing the top seller-->
+        <div data-ng-view></div>
         
 
         
@@ -70,12 +67,5 @@
             </div>
         </footer>
         
-        <!-- jQuery – required for Bootstrap's JavaScript plugins) --> 
-        <script src="js/jquery.min.js"></script> 
-        <!-- All Bootstrap  plug-ins  file --> 
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Basic AngularJS -->
-        <script src="js/angular.min.js"></script>
-        <script src="js/login.js"></script>
     </body>
 </html>

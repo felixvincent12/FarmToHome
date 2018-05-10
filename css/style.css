@@ -36,6 +36,9 @@ footer{
 .pushNav{
     margin-top:100px;
 }
+.aboutUsPushNav{
+    margin-top:50px;
+}
 .navbar-brand > img{
     position:absolute; 
     top:5px;
