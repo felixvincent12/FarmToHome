@@ -49,7 +49,6 @@ app.controller ("loginCtrl", function($scope, $http, $window){
 				if(response.data == "success"){
 					$window.alert("You have successfully login");
 					$window.location.href = "index.php";
-//					$scope.islogin = true;
 				}
 				else {
 					$scope.errMsg = response.data;
@@ -66,3 +65,29 @@ app.controller ("loginCtrl", function($scope, $http, $window){
 	};
           
 }); 
+
+app.controller ("logoutCtrl", function($scope, $http, $window){
+	$scope.logout = function (){
+		$http({
+			method: 'GET',
+			url: "api/processLogout.php"
+		}).then (
+			function(response){
+				if(response.data == "success"){
+					$window.alert("You have been logout");
+					$window.location.href = "index.php";
+				}
+				else {
+					$scope.errMsg = response.data;
+					$window.alert($scope.errMsg);
+				}
+			},
+			function (response){
+				$scope.msg = "service does not exist";
+				$scope.statusval = response.status;
+				$scope.statustext = response.statusText;
+				$scope.headers = response.headers;
+			}
+		);
+	};
+});

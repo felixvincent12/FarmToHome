@@ -79,7 +79,7 @@ date_default_timezone_set('Asia/Kuala_Lumpur');
                 </div>
                 
                 <div class="col-md-9">
-                    <input type="password" class="form-control" id="uPassword" name="uPassword" data-ng-model="uPassword" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,18}" data-ng-minlength="6" data-ng-maxlength="18" required/>
+                    <input type="password" class="form-control" id="uPassword" name="uPassword" data-ng-model="uPassword" placeholder="At least one numeric digit, one upper case letter, one lower case letter, between 6 - 18 character" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,18}" data-ng-minlength="6" data-ng-maxlength="18" required/>
                     <span data-ng-show="signUpForm.uPassword.$invalid && signUpForm.uPassword.$dirty" class="glyphicon glyphicon-remove form-control-feedback"></span>
                     <span data-ng-show="signUpForm.uPassword.$valid" class="glyphicon glyphicon-ok form-control-feedback"></span>
                     <div class="text-danger" data-ng-show="signUpForm.uPassword.$error.required && signUpForm.uPassword.$dirty">*Please Fill In</div>

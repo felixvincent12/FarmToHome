@@ -1,23 +1,23 @@
 <div data-ng-init="login = false">
 <?php
 
-        session_start();
-        if ($_SESSION['login_user'] != "" && $_SESSION['role'] != ""){
-            echo '<div data-ng-model="login = true"></div>';
-        }
+	session_start();
+	if ($_SESSION['login_user'] != "" && $_SESSION['role'] != ""){
+		echo '<div data-ng-model="login = true"></div>';
+	}
     
-        else{
-            echo'<div data-ng-model = "login = false"></div>';
-        }
-    ?>
+	else{
+		echo'<div data-ng-model = "login = false"></div>';
+	}
+?>
 
-<!--modal for login -->
+	<!--modal for login -->
     <?php require_once "loginModal.php" ?>
 
 
 
 
-<!-- navigation bar code-->
+	<!-- navigation bar code-->
     <nav class="navbar navbar-inverse navbar-fixed-top navbar-collapse" role="navigation">
                         
             <!-- for title-->
@@ -32,8 +32,6 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <div class="col-md-8">
                             
-                                
-
                 <!-- list of navigation -->
                 <div class="">
                     <ul class="nav navbar-nav">
@@ -76,13 +74,10 @@
                         <li><a href="#UserProfilePage">User Profile</a></li>
                         <li><a href="#">Purchase History</a></li>
                         <li class="divider"></li>
-                        <li><a data-ng-click="login = false">Logout</a></li>
-                       <li>{{login}}</li>
-                    </ul>
-                       
-                    
+                        <li><a data-ng-controller="logoutCtrl" data-ng-click="logout()">Logout</a></li>
+				   </ul>
              </div>
-           </div>
+		</div>
      </nav>
 </div>
 
